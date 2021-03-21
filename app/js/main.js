@@ -9,22 +9,6 @@ import { DropZone } from 'this://app/js/drop_zone.js';
 const HOME = sys.cwd();
 $('#crosshair').style.backgroundImage = `url(${HOME}/crosshairs/logo/CrossOver Lite.png)`;
 
-function screenshot() {
-  setTimeout(async () => {
-    const image = new Graphics.Image(500, 500, document);
-    console.log(image);
-    const bytes = image.toBytes('png');
-    console.log(bytes);
-    const path = HOME + '/test.png';
-    try {
-      const file = await sys.fs.open(path, "w+", 0o666);
-      await file.write(bytes);
-    } catch (e) {
-      Window.this.modal(<warning>Cannot open file {path} for writing.<br />{e}<br />Settings will not be saved.</warning>);
-    }
-  }, 3000);
-}
-
 DropZone({
   container: $('.wrapper'),
   accept: '*.*',
@@ -47,8 +31,6 @@ spawn_ahk();
 
 async function spawn_ahk() {
   const ahk = sys.spawn([sys.cwd() + '/ahk/hotkeys.exe'], { stdout: 'pipe', stdin: 'pipe' });
-  // Example of writing to AHK's stdin:
-  //ahk.stdin.write('Hello World!\r\n');
   for await (const line of read_pipe(ahk.stdout)) {
     console.log(`“${line}”`);
     handle_message(line);

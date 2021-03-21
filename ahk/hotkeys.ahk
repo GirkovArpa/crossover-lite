@@ -2,21 +2,6 @@
 
 locked := false
 
-;SetTimer, SendCursorCoords, 50
-
-;SendCursorCoords:
-    ;CoordMode, Mouse, Screen
-    ;MouseGetPos, x, y
-    ;FileAppend,[CURSOR] %x% %y%`r`n,* ; stdout << "[CURSOR] 123, 654" 
-    ;return
-
-;r:: 
-    ;STDIN := FileOpen("*", "r")
-    ;line := RTrim(STDIN.ReadLine(), "`n")
-    ;MouseGetPos, xpos, ypos
-    ;MsgBox, %line% The cursor is at X%xpos% Y%ypos%.
-    ;return
-
 ^!+x:: ; CTRL SHIFT ALT X
     SetTitleMatchMode 2 ; find window title starting with
     WinSet, ExStyle, ^0x20, Crossover Lite ; make window click-through
