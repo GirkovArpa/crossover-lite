@@ -1,0 +1,92 @@
+html {
+  font: system;
+  width: max-content;
+  height: min-content;
+  overflow: none;
+  background-color: threedface;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  background-color: threedhighlight;
+  padding-left: 40dip;
+  padding-right: 10dip;
+  vertical-align: top;
+  foreground-repeat: no-repeat;
+  foreground-position: 16dip 50%;
+  background-repeat: no-repeat;
+  background-position: 10dip 50%;
+  background-size: 64dip 64dip;
+  min-width: 160dip;
+  min-height: 88dip;
+  width: *;
+  height: *;
+  white-space: pre;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+shift {
+  transform: translate(-1em, 0);
+}
+
+v {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: .75em;
+}
+
+#content {
+  background-image: url(this://app/img/logo/64x64.png);
+}
+
+div#info {
+  background-color: threedhighlight;
+  border-bottom: 1px solid threedshadow;
+  padding: 0 10dip 10dip 10dip;
+  size: *;
+  margin: 0;
+  vertical-align: middle;
+  text-align: justify;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
+a:active {
+  color: red;
+}
+
+img {
+  transform: translate(0, 25%);
+}
+
+#button-bar {
+  flow: horizontal;
+  padding: 10dip;
+  border-spacing: 10dip;
+  margin: 0;
+  flow: horizontal;
+  horizontal-align: right;
+}
+
+label {
+  line-height: 1.4em;
+}
+
+#button-bar button {
+  display: block;
+  text-shadow: #FFF 0px 1px;
+  min-width: 4em;
+  line-height: 2em;
+  vertical-align: middle;
+  width: min-intrinsic;
+  text-align: center;
+}

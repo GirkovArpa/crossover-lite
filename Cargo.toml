@@ -1,0 +1,20 @@
+[package]
+name = "crossover-lite"
+version = "0.1.0"
+authors = ["GirkovArpa <girkovarpa@protonmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sciter-rs = "*"
+
+[target.'cfg(windows)'.build-dependencies]
+winres = "0.1"
+
+[package.metadata.winres]
+OriginalFilename = "crossover_lite.exe"
+LegalCopyright = "Copyright © 2021 Girkov Arpa, Lacy Morrow"
+FileDescription = "CrossOver Lite: Adjustable Crosshair Overlay for Windows"
+ProductName = "CrossOver Lite"
+ProductVersion = "0.1.0"

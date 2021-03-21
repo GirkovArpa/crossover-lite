@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html window-frame="transparent" window-resizable="false">
+
+  <head>
+    <title>Crossover Lite</title>
+    <link href="this://app/css/main.css" rel=stylesheet>
+    <script src="this://app/js/main.js" type=module></script>
+  </head>
+
+  <body>
+    <menu .popup></menu>
+
+    <div #crosshair>
+      <div #center-glyph></div>
+    </div>
+
+    <div .wrapper>
+      <div .container .col>
+        <div .row .corner-buttons>
+          <include src="this://app/img/svg/buttons/close.svg" />
+          <include src="this://app/img/svg/buttons/drag.svg" />
+        </div>
+        <div .row .corner-buttons>
+          <include src="this://app/img/svg/buttons/target.svg" />
+          <include src="this://app/img/svg/buttons/gear.svg" />
+        </div>
+      </div>
+
+      <div .tools .col .hidden>
+        <div .row .glyphs>
+          <span>
+            <label for="disc">
+              <include src="this://app/img/svg/radio/disc.svg" />
+            </label>
+            <input |radio #disc name="glyph">
+          </span>
+          <span>
+            <label for="cross">
+              <include src="this://app/img/svg/radio/cross.svg" />
+            </label>
+            <input |radio #cross name="glyph">
+          </span>
+          <span>
+            <label for="blind">
+              <include src="this://app/img/svg/radio/blind.svg" />
+            </label>
+            <input |radio #blind name="glyph" checked>
+          </span>
+        </div>
+        <div .row>
+          <label for="size">Size:</label>
+          <input |hslider #size value=20 min=0 max=60 />
+        </div>
+        <div .row style="margin-bottom: 0; border-radius: 5 5 0 0">
+          <label for="hue">Hue:</label>
+          <input |hslider #hue value=359 min=0 max=359 step=1 />
+        </div>
+        <div .row style="margin: 0; border-radius: 0">
+          <label for="sat">Satur:</label>
+          <input |hslider #sat value=100 min=0 max=100 step=1 />
+        </div>
+        <div .row style="margin: 0; border-radius: 0">
+          <label for="val">Value:</label>
+          <input |hslider #val value=50 min=0 max=100 step=1 />
+        </div>
+        <div .row style="margin-top: 0; border-radius: 0 0 5 5">
+          <label for="alpha">Alpha:</label>
+          <input |hslider #alpha value=1 min=0 max=1 step="0.01" />
+        </div>
+        <div .row>
+          <span .hotkey>lock: <hotkey>ctrl</hotkey> + <hotkey>alt</hotkey> + <hotkey>shift</hotkey> + <hotkey>x</hotkey></span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

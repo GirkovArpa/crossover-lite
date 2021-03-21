@@ -1,0 +1,237 @@
+html {
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  overflow: hidden;
+}
+
+body {
+  width: 500px;
+  height: 500px;
+  margin: 0;
+  background: transparent;
+  vertical-align: middle;
+}
+
+.wrapper {
+  size: max-content;
+  margin: auto;
+  transition: opacity .2s linear;
+  opacity: 1;
+}
+
+.wrapper.hidden {
+  opacity: 0;
+}
+
+.container {
+  width: 200px;
+  height: 124px !important;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 50%);
+  border-spacing: *;
+}
+
+#crosshair {
+  width: 500px;
+  height: 500px;
+  background: url("crosshairs/Actual/bullseye.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: 50%;
+  image-rendering: auto;
+  position: absolute;
+  top: -89px;
+  left: 0;
+  hit-margin: -999;
+  display: table;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#center-glyph {
+  z-index: 10;
+  color: red;
+  font-size: 25pt;
+  transform: translate(0, -0.075em);
+}
+
+.tools {
+  width: 200px;
+  height: max-content !important;
+  transition: transform .25s back-out, opacity .2s linear;
+  transform: translate(0, 0px);
+  opacity: 1;
+}
+
+.tools.hidden {
+  transition: transform .25s back-out, opacity .075s linear;
+  transform: translate(0, -50px);
+  opacity: 0;
+  hit-margin: -9999;
+}
+
+.tools>.row {
+  background: rgba(255, 255, 255, 80%);
+  border-radius: 4px;
+  margin: 0.75em 0;
+  vertical-align: middle;
+  height: 1.25em;
+}
+
+.glyphs {
+  vertical-align: middle;
+  height: 2em !important;
+  border-spacing: *;
+}
+
+.glyphs>span {
+  vertical-align: middle;
+  flow: row(label, svg);
+}
+
+.glyphs>span>label>svg {
+  size: 1.75em;
+}
+
+[name=glyph] {
+  height: *;
+  cursor: pointer;
+  hit-margin: 6px;
+  position: relative;
+}
+
+label {
+  width: 4em;
+  text-align: right;
+}
+
+input|hslider {
+  width: *;
+  cursor: pointer;
+  margin: auto 0.5em;
+}
+
+input|hslider>* {
+  cursor: pointer;
+}
+
+input|hslider#hue {
+  background: linear-gradient(to right, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+}
+
+input|hslider#sat {
+  background: linear-gradient(to right, hsl(359, 0%, 50) 0%, hsl(0, 100%, 50) 100%);
+}
+
+input|hslider#val {
+  background: linear-gradient(to right, black 0%, white 100%);
+}
+
+span.hotkey {
+  font-family: Courier;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 7pt;
+  text-align: center;
+  vertical-align: middle;
+  width: *;
+  height: *;
+  letter-spacing: 0.1em;
+}
+
+hotkey {
+  display: inline-block;
+  text-align: center;
+  white-space: pre;
+  background-color: rgb(180, 180, 180);
+  padding: 0 0.2em;
+}
+
+.col {
+  height: *;
+  flow: vertical;
+}
+
+.row {
+  width: *;
+  flow: horizontal;
+}
+
+.row.corner-buttons {
+  border-spacing: *;
+}
+
+.row.corner-buttons>svg, label>svg {
+  background: transparent;
+  size: 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.row.corner-buttons>svg>*, label>svg>* {
+  stroke: rgba(0, 0, 0, 0.5);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.row.corner-buttons>svg:hover>* {
+  stroke: rgb(220, 220, 220);
+}
+
+#drag {
+  cursor: move;
+}
+
+#gear {
+  behavior: clickable;
+}
+
+#gear.enabled {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#crosshairs {
+  display: none;
+}
+
+menu:not(.popup) {
+  font-size: 20pt;
+  image-rendering: auto;
+  overflow-y: auto;
+}
+
+menu>li {
+  flow: text;
+  width: 10em;
+  height: calc(1em + 5px);
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+menu>li.zoom {
+  foreground-size: 2em;
+  foreground-position: 0em 50%;
+}
+
+menu>li.light {
+  background-color: rgb(240, 240, 240);
+  color: rgb(10, 10, 10);
+}
+
+menu>li.dark {
+  color: rgb(240, 240, 240);
+  background-color: rgb(10, 10, 10);
+}
