@@ -84,7 +84,7 @@ To run, it must be in the same folder as [sciter.dll](https://github.com/c-smile
 		for their <a href="https://kenney.nl/assets/crosshair-pack">crosshair pack</a>
 		<td align="center"><a href="https://old.reddit.com/r/IrisFlame"><sub><b>🔥 IrisFlame</b></sub></a><br />
 		for other crosshairs
-		<td align="center"><a href="https://pixabay.com/"><img width="100px" src="https://pixabay.com/static/img/logo.png" alt="pixabay"/><br /><sub><b>pixabay</b></sub></a><br />
+		<td align="center"><a href="https://pixabay.com/"><img width="100px" src="https://pixabay.com/static/img/public/medium_rectangle_b.png" alt="Pixabay"/><br /><sub><b>Pixabay</b></sub></a><br />
 		for the <a href="https://pixabay.com/vectors/feather-plumage-slightly-833327/">feather</a> in the logo
   </tr>
 </table>
