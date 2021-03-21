@@ -41,6 +41,16 @@
 | Center the crosshair window       | <kbd>Control</kbd>-<kbd>Alt</kbd>-<kbd>Shift</kbd>-<kbd>C</kbd>      |
 | Show the **About** window         | <kbd>Control</kbd>-<kbd>Alt</kbd>-<kbd>Shift</kbd>-<kbd>A</kbd>      |
 
+# Games 🎮
+
+These are games that have been tested with the program:
+
+| Works | Game     |
+| ----- | -------- |
+| ✅     | Among Us |
+| ✅     | Deceit   |
+| ✅     | Roblox   |
+
 <p align="center">
   <img width="683" height="384" src="demo.gif">
 </p>
