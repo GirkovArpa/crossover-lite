@@ -3,7 +3,7 @@
 	<center><h1>CrossOver<sup><i>lite</i></sup></h1></center>
 </p>
 
-**CrossOver<sup><i>lite</i></sup>** is a <u>lightweight</u>, adjustable crosshair overlay for Windows.  Much like **[CrossOver](https://github.com/lacymorrow/crossover)**, its predecessor, it:
+**CrossOver<sup><i>lite</i></sup>** is a `5mb` <u>lightweight</u>, adjustable crosshair overlay for Windows.  Much like **[CrossOver](https://github.com/lacymorrow/crossover)**, its predecessor, it:
 
 - 🎯 Perfects your aim
 - 🌟 Enhances your game's default crosshairs
