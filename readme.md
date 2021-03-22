@@ -49,7 +49,9 @@ These are games that have been tested with the program:
 | ----- | -------- |
 | ✅     | Among Us |
 | ✅     | Deceit   |
+| ✅     | League of Legends   |
 | ✅     | Roblox   |
+| ✅     | Throne of Lies   |
 
 <p align="center">
   <img width="683" height="384" src="demo.gif">
