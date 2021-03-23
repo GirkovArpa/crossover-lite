@@ -10,4 +10,12 @@ $('#mit').on('click', () => {
   launch(cwd() + '/license.txt');
 });
 
+$('#girkov-arpa').on('click', () => {
+  launch('https://github.com/girkovarpa');
+});
+
+$('#lacy-morrow').on('click', () => {
+  launch('https://github.com/lacymorrow');
+});
+
 $('button').on('click', () => Window.this.close());
