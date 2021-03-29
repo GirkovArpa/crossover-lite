@@ -3,7 +3,7 @@ struct EventHandler;
 impl EventHandler {}
 impl sciter::EventHandler for EventHandler {}
 fn main() {
-    sciter::set_options(sciter::RuntimeOptions::DebugMode(true)).unwrap();
+    sciter::set_options(sciter::RuntimeOptions::DebugMode(false)).unwrap();
     let archived = include_bytes!("../target/app.rc");
     sciter::set_options(sciter::RuntimeOptions::ScriptFeatures(
         sciter::SCRIPT_RUNTIME_FEATURES::ALLOW_SYSINFO  as u8 |

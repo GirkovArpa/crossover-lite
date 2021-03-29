@@ -1,7 +1,10 @@
-<p align="center">
-  <img width="200" height="200" src="app/img/logo/1200x1200.png">
-	<center><h1>CrossOver<sup><i>lite</i></sup></h1></center>
-</p>
+<h1 align="center">
+<a href="https://github.com/girkovarpa/crossover-lite">
+<img src="app/img/logo/1200x1200.png" alt="CrossOver lite" width="200" height="200"/></a><br/><br/>
+CrossOver<sup><i>lite</i></sup>
+<br/>
+<br/>
+</h1>
 
 **CrossOver<sup><i>lite</i></sup>** is a `5mb` <u>lightweight</u>, adjustable crosshair overlay for Windows.  Much like **[CrossOver](https://github.com/lacymorrow/crossover)**, its predecessor, it:
 
@@ -11,9 +14,10 @@
 - 📊 Offers color options for better visibility
 - 👁️ Aids with colorblindness
 
-<p align="center">
-	<center><h1><a href="https://github.com/girkovarpa/crossover-lite/releases">👉 Download for Windows 👈</a></h1></center>
-</p>
+<h1 align="center">
+<a href="https://github.com/girkovarpa/crossover-lite/releases">
+👉 Download for Windows 👈</a>
+</h1>
 
 <p align="center">
   <img width="200" height="293" src="preview.png">
@@ -78,7 +82,6 @@ To run, it must be in the same folder as [sciter.dll](https://github.com/c-smile
 # Bugs 🐛
 
 - The program is somewhat unresponsive for a couple seconds after launch while it loads all the crosshairs.
-- Dragging via the <kbd>✣</kbd> button cannot be done too quickly, else the the window gets left behind.
 
 # Credits 🏅
 
@@ -101,6 +104,7 @@ To run, it must be in the same folder as [sciter.dll](https://github.com/c-smile
   </tr>
 </table>
 
-<p align="center">
-	<center><h1><a href="https://github.com/girkovarpa/crossover-lite/releases">📥 Download 📥</a></h1></center>
-</p>
+<h1 align="center">
+<a href="https://github.com/girkovarpa/crossover-lite/releases">
+📥 Download 📥</a>
+</h1>

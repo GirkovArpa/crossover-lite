@@ -3,7 +3,7 @@ import * as sys from '@sys';
 import * as env from '@env';
 import * as Storage from "@storage";
 import { read_pipe } from 'this://app/js/read_pipe.js';
-import { moveableView } from 'this://app/js/moveable_view.js';
+import { movableView } from 'this://app/js/moveable_view.js';
 import { DropZone } from 'this://app/js/drop_zone.js';
 
 const HOME = sys.cwd();
@@ -25,7 +25,7 @@ DropZone({
 
 globalThis.CURSOR = { x: null, y: null };
 
-moveableView('#drag');
+movableView('#drag');
 
 spawn_ahk();
 

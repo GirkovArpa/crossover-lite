@@ -1,6 +1,6 @@
 [package]
 name = "crossover-lite"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["GirkovArpa <girkovarpa@protonmail.com>"]
 edition = "2018"
 
@@ -17,4 +17,4 @@ OriginalFilename = "crossover_lite.exe"
 LegalCopyright = "Copyright © 2021 Girkov Arpa, Lacy Morrow"
 FileDescription = "CrossOver Lite: Adjustable Crosshair Overlay for Windows"
 ProductName = "CrossOver Lite"
-ProductVersion = "0.1.0"
+ProductVersion = "0.1.1"
