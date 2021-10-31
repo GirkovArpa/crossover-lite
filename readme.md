@@ -49,13 +49,14 @@ CrossOver<sup><i>lite</i></sup>
 
 These are games that have been tested with the program:
 
-| Works | Game     |
-| ----- | -------- |
-| ✅     | Among Us |
-| ✅     | Deceit   |
-| ✅     | League of Legends   |
-| ✅     | Roblox   |
-| ✅     | Throne of Lies   |
+| Game     | Fullscreen | Windowed | Windowed FullScreen |
+| -------- | -------- | -------- | -------- |
+| Among Us | ✅ | ❔ | ❔ |
+| Deceit   | ✅ | ❔ | ❔ |
+| League of Legends   | ✅ | ❔ | ❔ |
+| Roblox   | ✅ | ❔ | ❔ |
+| Throne of Lies   | ✅ | ❔ | ❔ |
+| Overwatch (October 12, 2021 Patch) | ❌ | ✅ | ✅ |
 
 <p align="center">
   <img width="683" height="384" src="demo.gif">
