@@ -44,7 +44,7 @@ body {
   top: -89px;
   left: 0;
   hit-margin: -999;
-  display: table;
+  /* display: table; */
   vertical-align: middle;
   text-align: center;
 }
@@ -62,6 +62,7 @@ body {
   transition: transform .25s back-out, opacity .2s linear;
   transform: translate(0, 0px);
   opacity: 1;
+  behavior: form;
 }
 
 .tools.hidden {

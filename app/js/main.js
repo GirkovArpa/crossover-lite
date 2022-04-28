@@ -1,13 +1,12 @@
 import { $, $$ } from '@sciter';
 import * as sys from '@sys';
-import * as env from '@env';
-import * as Storage from "@storage";
+import * as Stream from "this://app/js/stream.js";
 import { read_pipe } from 'this://app/js/read_pipe.js';
 import { movableView } from 'this://app/js/moveable_view.js';
 import { DropZone } from 'this://app/js/drop_zone.js';
 
 const HOME = sys.cwd();
-$('#crosshair').style.backgroundImage = `url(${HOME}/crosshairs/logo/CrossOver Lite.png)`;
+// $('#crosshair').style.backgroundImage = `url(${HOME}/crosshairs/logo/CrossOver Lite.png)`;
 
 DropZone({
   container: $('.wrapper'),
@@ -67,7 +66,7 @@ function handle_message(line) {
   }
 }
 
-centerWindow();
+// centerWindow();
 setInterval(() => {
   Window.this.isTopmost = true;
 });
@@ -91,14 +90,6 @@ function centerWindow() {
   Window.this.move((sw - w) / 2, (sh - h) / 2 + (CROSSHAIR_CSS_TOP), w, h, true);
 }
 
-$('#size').on('input', function () {
-  $('#crosshair').style.backgroundSize = this.value + '%';
-  $('#center-glyph').style.fontSize = this.value + 'pt';
-});
-
-$('#alpha').on('input', function () {
-  $('#crosshair').style.opacity = this.value;
-});
 
 document.on('click', '#target', (_, target) => {
   const [, , , screenHeight] = Window.this.box('screen', 'dimension');
@@ -189,23 +180,82 @@ async function buildMenu() {
 
 buildMenu();
 
+
+const setting =
+{
+  data: {
+    glyph: "blind",
+    size: 20,
+    hue: 359,
+    sat: 100,
+    val: 50,
+    alpha: 1,
+    x: 700,
+    y: 300,
+    crosshair: `${HOME}/crosshairs/logo/CrossOver Lite.png`
+  },
+  load: function()
+  {
+    let saved = JSON.parse(Stream.readSync(`${HOME}/setting.json`) || "{}");
+    this.data = { ...this.data, ...saved};
+
+    $('.tools').value = this.data;
+    $('.tools').postEvent(new Event("input", {bubbles: true}));
+
+    const glyphs = { disc: '•', cross: '+', blind: '' };
+    $('#center-glyph').textContent = glyphs[this.data.glyph];
+    $('#crosshair').style.backgroundImage = `url(${this.data.crosshair})`;
+
+    Window.this.move(this.data.x, this.data.y);
+  },
+  save: function()
+  {
+    document.timer(2000, () => this.write());
+  },
+  write: function()
+  {
+    this.data = { ...this.data, ...$('.tools').value };
+    
+    Stream.writeSync(`${HOME}/setting.json`, this.data);
+  }
+}
+
+Window.this.on("move", () =>
+{
+  var [x, y] = Window.this.box("position", "border", "screen");
+  setting.data.x = x;
+  setting.data.y = y;
+
+  setting.save();
+});
+
 document.on('click', 'li.selection', (_, { attributes: { path } }) => {
   $('#crosshair').style.backgroundImage = `url(${path})`;
+  setting.data.crosshair = path;
+  setting.save();
 });
 
 document.on('click', '[name=glyph]', (_, { id }) => {
   const glyphs = { disc: '•', cross: '+', blind: '' };
   $('#center-glyph').textContent = glyphs[id];
+  setting.save();
 });
 
-document.on('input', '#alpha, #hue, #sat, #val', (_, { id, value }) => {
-  const hue = $('#hue').value;
-  const sat = $('#sat').value;
-  const val = $('#val').value;
-  const alpha = $('#alpha').value;
+document.on('input', '.tools', (_, { value: {hue, sat, val, alpha, size} }) => {
+  $('#crosshair').style.opacity = alpha;
+  $('#crosshair').style.backgroundSize = size + '%';
+
   $('#center-glyph').style.color = `hsl(${hue}, ${sat}%, ${val}%)`;
+  $('#center-glyph').style.fontSize = size + 'pt';
+  setting.save();
 });
 
 $('#hue').on('input', function () {
   $('#sat').style.background = `linear-gradient(to right, hsl(${this.value}, 0%, 50) 0%, hsl(${this.value}, 100%, 50) 100%)`;
+  setting.save();
 });
+
+document.ready = () =>
+{
+  setting.load();
+}

@@ -32,40 +32,40 @@
             <label for="disc">
               <include src="this://app/img/svg/radio/disc.svg" />
             </label>
-            <input |radio #disc name="glyph">
+            <input |radio #disc name="glyph" value="disc">
           </span>
           <span>
             <label for="cross">
               <include src="this://app/img/svg/radio/cross.svg" />
             </label>
-            <input |radio #cross name="glyph">
+            <input |radio #cross name="glyph" value="cross">
           </span>
           <span>
             <label for="blind">
               <include src="this://app/img/svg/radio/blind.svg" />
             </label>
-            <input |radio #blind name="glyph" checked>
+            <input |radio #blind name="glyph" checked value="blind">
           </span>
         </div>
         <div .row>
           <label for="size">Size:</label>
-          <input |hslider #size value=20 min=0 max=60 />
+          <input |hslider #size value=20 min=0 max=60 name=size/>
         </div>
         <div .row style="margin-bottom: 0; border-radius: 5 5 0 0">
           <label for="hue">Hue:</label>
-          <input |hslider #hue value=359 min=0 max=359 step=1 />
+          <input |hslider #hue value=359 min=0 max=359 step=1 name=hue/>
         </div>
         <div .row style="margin: 0; border-radius: 0">
           <label for="sat">Satur:</label>
-          <input |hslider #sat value=100 min=0 max=100 step=1 />
+          <input |hslider #sat value=100 min=0 max=100 step=1 name=sat/>
         </div>
         <div .row style="margin: 0; border-radius: 0">
           <label for="val">Value:</label>
-          <input |hslider #val value=50 min=0 max=100 step=1 />
+          <input |hslider #val value=50 min=0 max=100 step=1 name=val/>
         </div>
         <div .row style="margin-top: 0; border-radius: 0 0 5 5">
           <label for="alpha">Alpha:</label>
-          <input |hslider #alpha value=1 min=0 max=1 step="0.01" />
+          <input |hslider #alpha value=1 min=0 max=1 step="0.01" name=alpha/>
         </div>
         <div .row>
           <span .hotkey>lock: <hotkey>ctrl</hotkey> + <hotkey>alt</hotkey> + <hotkey>shift</hotkey> + <hotkey>x</hotkey></span>
